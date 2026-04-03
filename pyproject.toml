@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ucomp-freshbox"
+version = "1.0.0"
+description = "automated setup script for a fresh OS. installs everything you actually need."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+freshbox = "freshbox:main"
+
+[tool.setuptools]
+py-modules = ["freshbox"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["installer*"]

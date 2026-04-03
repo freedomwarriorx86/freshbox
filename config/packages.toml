@@ -1,0 +1,34 @@
+[categories.monitors]
+label = "System Monitors"
+packages = [
+    { name = "htop",      apt = "htop",      dnf = "htop",      brew = "htop"      },
+    { name = "btop",      apt = "btop",      dnf = "btop",      brew = "btop"      },
+    { name = "fastfetch", apt = "fastfetch", apt_ppa = "ppa:zhangsongcui3371/fastfetch", dnf = "fastfetch", brew = "fastfetch" },
+]
+
+[categories.devtools]
+label = "Dev Tools"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git"  },
+    { name = "curl",            apt = "curl",            dnf = "curl",  brew = "curl" },
+    { name = "wget",            apt = "wget",            dnf = "wget",  brew = "wget" },
+    { name = "make",            apt = "make",            dnf = "make",  brew = "make" },
+    { name = "build-essential", apt = "build-essential", dnf = "gcc",   brew = "gcc"  },
+]
+
+[categories.shell]
+label = "Shell Enhancements"
+packages = [
+    { name = "zsh", apt = "zsh", dnf = "zsh", brew = "zsh" },
+    { name = "fzf", apt = "fzf", dnf = "fzf", brew = "fzf" },
+    { name = "starship", apt_script = "https://starship.rs/install.sh", dnf_script = "https://starship.rs/install.sh", brew = "starship" },
+]
+
+[categories.terminal]
+label = "Terminal Apps"
+packages = [
+    { name = "tmux",   apt = "tmux",   dnf = "tmux",   brew = "tmux"   },
+    { name = "neovim", apt = "neovim", dnf = "neovim", brew = "neovim" },
+    { name = "bat",    apt = "bat",    dnf = "bat",    brew = "bat"    },
+    { name = "eza",    apt = "eza",    dnf = "eza",    brew = "eza"    },
+]

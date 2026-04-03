@@ -1,0 +1,13 @@
+README.md
+freshbox.py
+pyproject.toml
+installer/__init__.py
+installer/detect.py
+installer/packages.py
+installer/runner.py
+ucomp_freshbox.egg-info/PKG-INFO
+ucomp_freshbox.egg-info/SOURCES.txt
+ucomp_freshbox.egg-info/dependency_links.txt
+ucomp_freshbox.egg-info/entry_points.txt
+ucomp_freshbox.egg-info/requires.txt
+ucomp_freshbox.egg-info/top_level.txt
