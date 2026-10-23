@@ -11,6 +11,7 @@ class Status(Enum):
     INSTALLED  = "installed"
     SKIPPED    = "skipped"
     FAILED     = "failed"
+    DRY_RUN    = "dry-run"
 
 
 @dataclass
@@ -83,30 +84,32 @@ def _run_script(url: str) -> tuple[bool, str]:
         return False, str(e)
 
 
-def install_package(pkg: Package, manager: str) -> Result:
+def install_package(pkg: Package, manager: str, dry_run: bool = False) -> Result:
     if is_installed(pkg.name):
         return Result(package=pkg.name, status=Status.SKIPPED)
 
-    # script-based install (e.g. starship)
     script_url = getattr(pkg, f"{manager}_script", None)
     if script_url:
+        if dry_run:
+            return Result(package=pkg.name, status=Status.DRY_RUN)
         ok, err = _run_script(script_url)
         if ok:
             return Result(package=pkg.name, status=Status.INSTALLED)
         return Result(package=pkg.name, status=Status.FAILED, error=err)
 
-    # ppa-based install (apt only)
     if manager == "apt":
         ppa = getattr(pkg, "apt_ppa", None)
-        if ppa:
+        if ppa and not dry_run:
             ok, err = _add_ppa(ppa)
             if not ok:
                 return Result(package=pkg.name, status=Status.FAILED, error=err)
 
-    # standard install
     pkg_id = pkg.for_manager(manager)
     if not pkg_id:
         return Result(package=pkg.name, status=Status.FAILED, error=f"no package defined for {manager}")
+
+    if dry_run:
+        return Result(package=pkg.name, status=Status.DRY_RUN)
 
     cmd = INSTALL_COMMANDS[manager] + [pkg_id]
     ok, err = _run(cmd)
