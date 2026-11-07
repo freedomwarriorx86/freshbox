@@ -18,12 +18,23 @@ class Result:
     package: str
     status: Status
     error: str = ""
+    plan: str = ""
 
 
 INSTALL_COMMANDS = {
-    "apt":  ["sudo", "apt", "install", "-y"],
-    "dnf":  ["sudo", "dnf", "install", "-y"],
-    "brew": ["brew", "install"],
+    "apt":   ["sudo", "apt", "install", "-y"],
+    "dnf":   ["sudo", "dnf", "install", "-y"],
+    "brew":  ["brew", "install"],
+    "nix":   ["nix-env", "-iA"],
+    "zypper": ["sudo", "zypper", "install", "-y"],
+}
+
+UPDATE_COMMANDS = {
+    "apt":   ["sudo", "apt", "update"],
+    "dnf":   ["sudo", "dnf", "makecache"],
+    "brew":  ["brew", "update"],
+    "nix":   ["nix-channel", "--update"],
+    "zypper": ["sudo", "zypper", "refresh"],
 }
 
 
@@ -56,6 +67,11 @@ def _add_ppa(ppa: str) -> tuple[bool, str]:
     return True, ""
 
 
+def update_package_manager(manager: str, timeout: int = 300) -> tuple[bool, str]:
+    """Refresh package manager indexes before installing packages."""
+    return _run(UPDATE_COMMANDS[manager], timeout=timeout)
+
+
 def _run_script(url: str) -> tuple[bool, str]:
     if not shutil.which("curl"):
         return False, "curl is not installed. install curl first."
@@ -83,13 +99,21 @@ def _run_script(url: str) -> tuple[bool, str]:
         return False, str(e)
 
 
-def install_package(pkg: Package, manager: str) -> Result:
+def install_package(pkg: Package, manager: str, dry_run: bool = False, verbose: bool = False) -> Result:
     if is_installed(pkg.name):
         return Result(package=pkg.name, status=Status.SKIPPED)
 
     # script-based install (e.g. starship)
     script_url = getattr(pkg, f"{manager}_script", None)
     if script_url:
+        if dry_run:
+            return Result(
+                package=pkg.name,
+                status=Status.INSTALLED,
+                plan=f"run install script {script_url}",
+            )
+        if verbose:
+            print(f"[freshbox] $ curl -sS {script_url} | sh -s -- --yes")
         ok, err = _run_script(script_url)
         if ok:
             return Result(package=pkg.name, status=Status.INSTALLED)
@@ -99,6 +123,14 @@ def install_package(pkg: Package, manager: str) -> Result:
     if manager == "apt":
         ppa = getattr(pkg, "apt_ppa", None)
         if ppa:
+            if dry_run:
+                return Result(
+                    package=pkg.name,
+                    status=Status.INSTALLED,
+                    plan=f"add ppa {ppa}, then install {pkg.name}",
+                )
+            if verbose:
+                print(f"[freshbox] $ sudo add-apt-repository -y {ppa} && sudo apt update")
             ok, err = _add_ppa(ppa)
             if not ok:
                 return Result(package=pkg.name, status=Status.FAILED, error=err)
@@ -108,7 +140,12 @@ def install_package(pkg: Package, manager: str) -> Result:
     if not pkg_id:
         return Result(package=pkg.name, status=Status.FAILED, error=f"no package defined for {manager}")
 
+    # nix installs a single nixpkgs attribute path (e.g. nixpkgs.nodejs)
     cmd = INSTALL_COMMANDS[manager] + [pkg_id]
+    if dry_run:
+        return Result(package=pkg.name, status=Status.INSTALLED, plan=" ".join(cmd))
+    if verbose:
+        print(f"[freshbox] $ {' '.join(cmd)}")
     ok, err = _run(cmd)
     if ok:
         return Result(package=pkg.name, status=Status.INSTALLED)

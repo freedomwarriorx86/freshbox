@@ -1,34 +1,192 @@
+[categories.stock]
+label = "Regular / Stock Utilities"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git" },
+    { name = "curl",            apt = "curl",            dnf = "curl",  brew = "curl", nix = "curl",            zypper = "curl" },
+    { name = "wget",            apt = "wget",            dnf = "wget",  brew = "wget", nix = "wget",            zypper = "wget" },
+    { name = "make",            apt = "make",            dnf = "make",  brew = "make", nix = "make",            zypper = "make" },
+    { name = "gcc",             apt = "gcc",             dnf = "gcc",   brew = "gcc",  nix = "gcc",             zypper = "gcc" },
+    { name = "build-essential", apt = "build-essential", dnf = "gcc",   brew = "gcc",  nix = "gcc",             zypper = "gcc" },
+    { name = "vim",             apt = "vim",             dnf = "vim",   brew = "vim",  nix = "vim",             zypper = "vim" },
+    { name = "nano",            apt = "nano",            dnf = "nano",  brew = "nano", nix = "nano",            zypper = "nano" },
+    { name = "unzip",           apt = "unzip",           dnf = "unzip", brew = "unzip",nix = "unzip",           zypper = "unzip" },
+    { name = "zip",             apt = "zip",             dnf = "zip",   brew = "zip",  nix = "zip",             zypper = "zip" },
+    { name = "tar",             apt = "tar",             dnf = "tar",   brew = "tar",  nix = "tar",             zypper = "tar" },
+    { name = "gzip",            apt = "gzip",            dnf = "gzip",  brew = "gzip", nix = "gzip",            zypper = "gzip" },
+    { name = "rsync",           apt = "rsync",           dnf = "rsync", brew = "rsync",nix = "rsync",           zypper = "rsync" },
+    { name = "openssh",         apt = "openssh-client",  dnf = "openssh-clients", brew = "openssh", nix = "openssh", zypper = "openssh" },
+    { name = "tree",            apt = "tree",            dnf = "tree",  brew = "tree", nix = "tree",            zypper = "tree" },
+    { name = "jq",              apt = "jq",              dnf = "jq",    brew = "jq",   nix = "jq",              zypper = "jq" },
+    { name = "yq",              apt = "yq",              dnf = "yq",    brew = "yq",   nix = "yq",              zypper = "yq" },
+    { name = "fd",              apt = "fd-find",         dnf = "fd",    brew = "fd",   nix = "fd",              zypper = "fd" },
+    { name = "ripgrep",         apt = "ripgrep",         dnf = "ripgrep", brew = "ripgrep", nix = "ripgrep", zypper = "ripgrep" },
+    { name = "bat",             apt = "bat",             dnf = "bat",   brew = "bat",  nix = "bat",             zypper = "bat" },
+    { name = "eza",             apt = "eza",             dnf = "eza",   brew = "eza",  nix = "eza",             zypper = "eza" },
+    { name = "duf",             apt = "duf",             dnf = "duf",   brew = "duf",  nix = "duf",             zypper = "duf" },
+    { name = "ncdu",            apt = "ncdu",            dnf = "ncdu",  brew = "ncdu", nix = "ncdu",            zypper = "ncdu" },
+]
+
 [categories.monitors]
 label = "System Monitors"
 packages = [
-    { name = "htop",      apt = "htop",      dnf = "htop",      brew = "htop"      },
-    { name = "btop",      apt = "btop",      dnf = "btop",      brew = "btop"      },
-    { name = "fastfetch", apt = "fastfetch", apt_ppa = "ppa:zhangsongcui3371/fastfetch", dnf = "fastfetch", brew = "fastfetch" },
+    { name = "htop",      apt = "htop",      dnf = "htop",      brew = "htop",      nix = "htop",      zypper = "htop" },
+    { name = "btop",      apt = "btop",      dnf = "btop",      brew = "btop",      nix = "btop",      zypper = "btop" },
+    { name = "fastfetch", apt = "fastfetch", apt_ppa = "ppa:zhangsongcui3371/fastfetch", dnf = "fastfetch", brew = "fastfetch", nix = "fastfetch", zypper = "fastfetch" },
 ]
 
 [categories.devtools]
 label = "Dev Tools"
 packages = [
-    { name = "git",             apt = "git",             dnf = "git",   brew = "git"  },
-    { name = "curl",            apt = "curl",            dnf = "curl",  brew = "curl" },
-    { name = "wget",            apt = "wget",            dnf = "wget",  brew = "wget" },
-    { name = "make",            apt = "make",            dnf = "make",  brew = "make" },
-    { name = "build-essential", apt = "build-essential", dnf = "gcc",   brew = "gcc"  },
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git" },
+    { name = "curl",            apt = "curl",            dnf = "curl",  brew = "curl", nix = "curl",            zypper = "curl" },
+    { name = "wget",            apt = "wget",            dnf = "wget",  brew = "wget", nix = "wget",            zypper = "wget" },
+    { name = "make",            apt = "make",            dnf = "make",  brew = "make", nix = "make",            zypper = "make" },
+    { name = "build-essential", apt = "build-essential", dnf = "gcc",   brew = "gcc",  nix = "gcc",             zypper = "gcc" },
+    { name = "nodejs",          apt = "nodejs",          dnf = "nodejs",brew = "node", nix = "nodejs",          zypper = "nodejs" },
+    { name = "npm",             apt = "npm",             dnf = "npm",   brew = "npm",  nix = "nodePackages.npm",zypper = "npm" },
+    { name = "go",              apt = "golang-go",       dnf = "golang",brew = "go",   nix = "go",              zypper = "go" },
+    { name = "rust",            apt = "rustc",           dnf = "rust",  brew = "rust", nix = "rustc",           zypper = "rust" },
+    { name = "cargo",           apt = "cargo",           dnf = "cargo", brew = "cargo",nix = "cargo",           zypper = "cargo" },
+    { name = "docker",          apt = "docker.io",       dnf = "docker",brew = "docker",nix = "docker",         zypper = "docker" },
 ]
 
 [categories.shell]
 label = "Shell Enhancements"
 packages = [
-    { name = "zsh", apt = "zsh", dnf = "zsh", brew = "zsh" },
-    { name = "fzf", apt = "fzf", dnf = "fzf", brew = "fzf" },
-    { name = "starship", apt_script = "https://starship.rs/install.sh", dnf_script = "https://starship.rs/install.sh", brew = "starship" },
+    { name = "zsh",     apt = "zsh",     dnf = "zsh",   brew = "zsh",   nix = "zsh",   zypper = "zsh" },
+    { name = "fzf",     apt = "fzf",     dnf = "fzf",   brew = "fzf",   nix = "fzf",   zypper = "fzf" },
+    { name = "starship",apt_script = "https://starship.rs/install.sh", dnf_script = "https://starship.rs/install.sh", brew = "starship", nix = "starship", zypper = "starship" },
 ]
 
 [categories.terminal]
 label = "Terminal Apps"
 packages = [
-    { name = "tmux",   apt = "tmux",   dnf = "tmux",   brew = "tmux"   },
-    { name = "neovim", apt = "neovim", dnf = "neovim", brew = "neovim" },
-    { name = "bat",    apt = "bat",    dnf = "bat",    brew = "bat"    },
-    { name = "eza",    apt = "eza",    dnf = "eza",    brew = "eza"    },
+    { name = "tmux",   apt = "tmux",   dnf = "tmux",   brew = "tmux",   nix = "tmux",   zypper = "tmux" },
+    { name = "neovim", apt = "neovim", dnf = "neovim", brew = "neovim", nix = "neovim", zypper = "neovim" },
+    { name = "bat",    apt = "bat",    dnf = "bat",    brew = "bat",    nix = "bat",    zypper = "bat" },
+    { name = "eza",    apt = "eza",    dnf = "eza",    brew = "eza",    nix = "eza",    zypper = "eza" },
+]
+
+[categories.cybersecurity]
+label = "Cybersecurity"
+packages = [
+    { name = "nmap",         apt = "nmap",         dnf = "nmap",         brew = "nmap",         nix = "nmap",         zypper = "nmap" },
+    { name = "wireshark",    apt = "wireshark",    dnf = "wireshark",    brew = "wireshark",    nix = "wireshark-qt",   zypper = "wireshark" },
+    { name = "metasploit",   apt = "metasploit-framework", dnf = "metasploit", brew = "metasploit", nix = "metasploit",   zypper = "metasploit" },
+    { name = "aircrack-ng",  apt = "aircrack-ng",  dnf = "aircrack-ng",  brew = "aircrack-ng",  nix = "aircrack-ng",    zypper = "aircrack-ng" },
+    { name = "john",         apt = "john",         dnf = "john",         brew = "john",         nix = "john",           zypper = "john" },
+    { name = "hashcat",      apt = "hashcat",      dnf = "hashcat",      brew = "hashcat",      nix = "hashcat",        zypper = "hashcat" },
+    { name = "burpsuite",    apt = "burpsuite",    dnf = "burpsuite",    brew = "burpsuite",    nix = "burpsuite",      zypper = "burpsuite" },
+    { name = "gobuster",     apt = "gobuster",     dnf = "gobuster",     brew = "gobuster",     nix = "gobuster",       zypper = "gobuster" },
+    { name = "dirb",         apt = "dirb",         dnf = "dirb",         brew = "dirb",         nix = "dirb",           zypper = "dirb" },
+    { name = "sqlmap",       apt = "sqlmap",       dnf = "sqlmap",       brew = "sqlmap",       nix = "sqlmap",         zypper = "sqlmap" },
+    { name = "hydra",        apt = "hydra",        dnf = "hydra",        brew = "hydra",        nix = "hydra",          zypper = "hydra" },
+    { name = "tcpdump",      apt = "tcpdump",      dnf = "tcpdump",      brew = "tcpdump",      nix = "tcpdump",        zypper = "tcpdump" },
+    { name = "netcat",       apt = "netcat-openbsd",dnf = "nc",          brew = "netcat",       nix = "netcat",         zypper = "netcat-openbsd" },
+    { name = "ncat",         apt = "ncat",         dnf = "nmap-ncat",    brew = "nmap",         nix = "nmap",           zypper = "nmap-ncat" },
+    { name = "whois",        apt = "whois",        dnf = "whois",        brew = "whois",        nix = "whois",          zypper = "whois" },
+    { name = "bind-utils",   apt = "dnsutils",     dnf = "bind-utils",   brew = "bind",         nix = "bind",           zypper = "bind-utils" },
+    { name = "amass",        apt = "amass",        dnf = "amass",        brew = "amass",        nix = "amass",          zypper = "amass" },
+    { name = "subfinder",    apt = "subfinder",    dnf = "subfinder",    brew = "subfinder",    nix = "subfinder",      zypper = "subfinder" },
+    { name = "ffuf",         apt = "ffuf",         dnf = "ffuf",         brew = "ffuf",         nix = "ffuf",           zypper = "ffuf" },
+    { name = "nuclei",       apt = "nuclei",       dnf = "nuclei",       brew = "nuclei",       nix = "nuclei",         zypper = "nuclei" },
+    { name = "bettercap",    apt = "bettercap",    dnf = "bettercap",    brew = "bettercap",    nix = "bettercap",      zypper = "bettercap" },
+    { name = "mitmproxy",    apt = "mitmproxy",    dnf = "mitmproxy",    brew = "mitmproxy",    nix = "mitmproxy",      zypper = "mitmproxy" },
+    { name = "exiftool",     apt = "libimage-exiftool-perl", dnf = "perl-Image-ExifTool", brew = "exiftool", nix = "exiftool", zypper = "perl-Image-ExifTool" },
+]
+[categories.webdev]
+label = "Web Development"
+packages = [
+    { name = "nodejs",         apt = "nodejs",         dnf = "nodejs",   brew = "node",   nix = "nodejs",   zypper = "nodejs" },
+    { name = "npm",            apt = "npm",            dnf = "npm",      brew = "npm",    nix = "nodePackages.npm", zypper = "npm" },
+    { name = "yarn",           apt = "yarn",           dnf = "yarn",     brew = "yarn",   nix = "yarn",     zypper = "yarn" },
+    { name = "pnpm",           apt_script = "https://get.pnpm.io/install.sh", dnf_script = "https://get.pnpm.io/install.sh", brew = "pnpm", nix = "pnpm", zypper = "pnpm" },
+    { name = "php",            apt = "php",            dnf = "php",      brew = "php",    nix = "php",      zypper = "php" },
+    { name = "composer",       apt = "composer",       dnf = "composer", brew = "composer", nix = "composer", zypper = "composer" },
+    { name = "python3",        apt = "python3",        dnf = "python3",  brew = "python@", nix = "python3", zypper = "python3" },
+    { name = "pip",            apt = "python3-pip",    dnf = "python3-pip", brew = "python@", nix = "python3Packages.pip", zypper = "python3-pip" },
+    { name = "venv",           apt = "python3-venv",   dnf = "python3-venv", brew = "python@", nix = "python3", zypper = "python3-venv" },
+    { name = "ruby",           apt = "ruby",           dnf = "ruby",     brew = "ruby",   nix = "ruby",     zypper = "ruby" },
+    { name = "bundler",        apt = "ruby-bundler",   dnf = "rubygem-bundler", brew = "bundler", nix = "rubyPackages.bundler", zypper = "rubygem-bundler" },
+    { name = "go",             apt = "golang-go",      dnf = "golang",   brew = "go",     nix = "go",       zypper = "go" },
+    { name = "rust",           apt = "rustc",          dnf = "rust",     brew = "rust",   nix = "rustc",    zypper = "rust" },
+    { name = "cargo",          apt = "cargo",          dnf = "cargo",    brew = "cargo",  nix = "cargo",    zypper = "cargo" },
+    { name = "docker",         apt = "docker.io",      dnf = "docker",   brew = "docker", nix = "docker",   zypper = "docker" },
+    { name = "docker-compose", apt = "docker-compose", dnf = "docker-compose", brew = "docker-compose", nix = "docker-compose", zypper = "docker-compose" },
+    { name = "nginx",          apt = "nginx",          dnf = "nginx",    brew = "nginx",  nix = "nginx",    zypper = "nginx" },
+    { name = "apache2",        apt = "apache2",        dnf = "httpd",    brew = "httpd",  nix = "apacheHttpd", zypper = "apache2" },
+    { name = "certbot",        apt = "certbot",        dnf = "certbot",  brew = "certbot",nix = "certbot",  zypper = "certbot" },
+    { name = "postgresql-client", apt = "postgresql-client", dnf = "postgresql", brew = "postgresql", nix = "postgresql", zypper = "postgresql" },
+    { name = "mysql-client",   apt = "mysql-client",   dnf = "mysql",    brew = "mysql",  nix = "mariadb",  zypper = "mysql-client" },
+    { name = "redis",          apt = "redis-server",   dnf = "redis",    brew = "redis",  nix = "redis",    zypper = "redis" },
+]
+
+[categories.circuitdev]
+label = "Circuit Design"
+packages = [
+    { name = "kicad",    apt = "kicad",    dnf = "kicad",    brew = "kicad",    nix = "kicad",    zypper = "kicad" },
+    { name = "ngspice",  apt = "ngspice",  dnf = "ngspice",  brew = "ngspice",  nix = "ngspice",  zypper = "ngspice" },
+    { name = "gtkwave",  apt = "gtkwave",  dnf = "gtkwave",  brew = "gtkwave",  nix = "gtkwave",  zypper = "gtkwave" },
+    { name = "verilator",apt = "verilator",dnf = "verilator",brew = "verilator",nix = "verilator",zypper = "verilator" },
+    { name = "iverilog", apt = "iverilog", dnf = "iverilog", brew = "iverilog", nix = "iverilog", zypper = "iverilog" },
+    { name = "openocd",  apt = "openocd",  dnf = "openocd",  brew = "openocd",  nix = "openocd",  zypper = "openocd" },
+    { name = "pyocd",    apt_script = "https://github.com/pyocd/pyOCD/releases/latest/download/pyocd-install.sh", dnf_script = "https://github.com/pyocd/pyOCD/releases/latest/download/pyocd-install.sh", brew = "pyocd", nix = "pyocd", zypper = "pyocd" },
+    { name = "stlink",   apt = "stlink-tools", dnf = "stlink", brew = "stlink", nix = "stlink", zypper = "stlink" },
+    { name = "picocom",  apt = "picocom",  dnf = "picocom",  brew = "picocom",  nix = "picocom",  zypper = "picocom" },
+    { name = "minicom",  apt = "minicom",  dnf = "minicom",  brew = "minicom",  nix = "minicom",  zypper = "minicom" },
+]
+
+[categories.science]
+label = "Science"
+packages = [
+    { name = "octave",   apt = "octave",   dnf = "octave",   brew = "octave",   nix = "octave",   zypper = "octave" },
+    { name = "scilab",   apt = "scilab",   dnf = "scilab",   brew = "scilab",   nix = "scilab",   zypper = "scilab" },
+    { name = "gnuplot",  apt = "gnuplot",  dnf = "gnuplot",  brew = "gnuplot",  nix = "gnuplot",  zypper = "gnuplot" },
+    { name = "numpy",    apt = "python3-numpy",    dnf = "python3-numpy",    brew = "python@",    nix = "python3Packages.numpy",    zypper = "python3-numpy" },
+    { name = "scipy",    apt = "python3-scipy",    dnf = "python3-scipy",    brew = "python@",    nix = "python3Packages.scipy",    zypper = "python3-scipy" },
+    { name = "matplotlib",apt = "python3-matplotlib", dnf = "python3-matplotlib", brew = "python@", nix = "python3Packages.matplotlib", zypper = "python3-matplotlib" },
+    { name = "pandas",   apt = "python3-pandas",   dnf = "python3-pandas",   brew = "python@",    nix = "python3Packages.pandas",   zypper = "python3-pandas" },
+    { name = "sympy",    apt = "python3-sympy",    dnf = "python3-sympy",    brew = "python@",    nix = "python3Packages.sympy",    zypper = "python3-sympy" },
+    { name = "sagemath", apt = "sagemath", dnf = "sagemath", brew = "sagemath", nix = "sagemath", zypper = "sagemath" },
+    { name = "gmsh",     apt = "gmsh",     dnf = "gmsh",     brew = "gmsh",     nix = "gmsh",     zypper = "gmsh" },
+]
+
+[categories.electronics]
+label = "Electrical Engineering"
+packages = [
+    { name = "kicad",    apt = "kicad",    dnf = "kicad",    brew = "kicad",    nix = "kicad",    zypper = "kicad" },
+    { name = "ngspice",  apt = "ngspice",  dnf = "ngspice",  brew = "ngspice",  nix = "ngspice",  zypper = "ngspice" },
+    { name = "gtkwave",  apt = "gtkwave",  dnf = "gtkwave",  brew = "gtkwave",  nix = "gtkwave",  zypper = "gtkwave" },
+    { name = "verilator",apt = "verilator",dnf = "verilator",brew = "verilator",nix = "verilator",zypper = "verilator" },
+    { name = "iverilog", apt = "iverilog", dnf = "iverilog", brew = "iverilog", nix = "iverilog", zypper = "iverilog" },
+    { name = "ghdl",     apt = "ghdl",     dnf = "ghdl",     brew = "ghdl",     nix = "ghdl",     zypper = "ghdl" },
+    { name = "yosys",    apt = "yosys",    dnf = "yosys",    brew = "yosys",    nix = "yosys",    zypper = "yosys" },
+    { name = "nextpnr",  apt = "nextpnr",  dnf = "nextpnr",  brew = "nextpnr",  nix = "nextpnr",  zypper = "nextpnr" },
+    { name = "openocd",  apt = "openocd",  dnf = "openocd",  brew = "openocd",  nix = "openocd",  zypper = "openocd" },
+    { name = "stlink",   apt = "stlink-tools", dnf = "stlink", brew = "stlink", nix = "stlink", zypper = "stlink" },
+    { name = "picocom",  apt = "picocom",  dnf = "picocom",  brew = "picocom",  nix = "picocom",  zypper = "picocom" },
+    { name = "sigrok",   apt = "sigrok",   dnf = "sigrok",   brew = "sigrok",   nix = "sigrok",   zypper = "sigrok" },
+    { name = "pulseview",apt = "pulseview", dnf = "pulseview", brew = "pulseview", nix = "pulseview", zypper = "pulseview" },
+]
+
+[categories.privacy]
+label = "Privacy & Anonymity"
+packages = [
+    { name = "tor",        apt = "tor",        dnf = "tor",        brew = "tor",        nix = "tor",        zypper = "tor" },
+    { name = "torsocks",   apt = "torsocks",   dnf = "torsocks",   brew = "torsocks",   nix = "torsocks",   zypper = "torsocks" },
+    { name = "gnupg",      apt = "gnupg",      dnf = "gnupg",      brew = "gnupg",      nix = "gnupg",      zypper = "gnupg" },
+    { name = "veracrypt",  apt = "veracrypt",  dnf = "veracrypt",  brew = "veracrypt",  nix = "veracrypt",  zypper = "veracrypt" },
+    { name = "keepassxc",  apt = "keepassxc",  dnf = "keepassxc",  brew = "keepassxc",  nix = "keepassxc",  zypper = "keepassxc" },
+    { name = "bleachbit",  apt = "bleachbit",  dnf = "bleachbit",  brew = "bleachbit",  nix = "bleachbit",  zypper = "bleachbit" },
+]
+
+[categories.sysadmin]
+label = "System Administration"
+packages = [
+    { name = "ansible",   apt = "ansible",   dnf = "ansible",   brew = "ansible",   nix = "ansible",   zypper = "ansible" },
+    { name = "terraform", apt = "terraform", dnf = "terraform", brew = "terraform", nix = "terraform", zypper = "terraform" },
+    { name = "kubectl",   apt = "kubectl",   dnf = "kubectl",   brew = "kubectl",   nix = "kubectl",   zypper = "kubectl" },
+    { name = "helm",      apt = "helm",      dnf = "helm",      brew = "helm",      nix = "helm",      zypper = "helm" },
+    { name = "fail2ban",  apt = "fail2ban",  dnf = "fail2ban",  brew = "fail2ban",  nix = "fail2ban",  zypper = "fail2ban" },
+    { name = "auditd",    apt = "auditd",    dnf = "auditd",    brew = "auditd",    nix = "auditd",    zypper = "auditd" },
 ]

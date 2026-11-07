@@ -10,13 +10,18 @@ class Package:
     apt: str = ""
     dnf: str = ""
     brew: str = ""
+    nix: str = ""
+    zypper: str = ""
     apt_ppa: Optional[str] = None
     apt_script: Optional[str] = None
     dnf_script: Optional[str] = None
     brew_script: Optional[str] = None
 
     def for_manager(self, manager: str) -> str:
-        return getattr(self, manager, "")
+        value = getattr(self, manager, "")
+        if manager == "nix" and value:
+            return f"nixpkgs.{value}"
+        return value
 
 
 @dataclass

@@ -4,9 +4,11 @@ import subprocess
 
 
 SUPPORTED = {
-    "apt":  "Ubuntu / Debian",
-    "dnf":  "Fedora / RHEL",
-    "brew": "macOS",
+    "apt":   "Ubuntu / Debian",
+    "dnf":   "Fedora / RHEL",
+    "brew":  "macOS",
+    "nix":   "NixOS / nix",
+    "zypper": "openSUSE / SUSE",
 }
 
 
@@ -58,6 +60,28 @@ def is_installed(package_name: str) -> bool:
             capture_output=True, text=True
         )
         if result.returncode == 0:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # nix check
+    try:
+        result = subprocess.run(
+            ["nix-env", "-q", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name in result.stdout:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # zypper / rpm check (rpm already tried above; try zypper search)
+    try:
+        result = subprocess.run(
+            ["zypper", "se", "--installed-only", "--match-exact", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name in result.stdout:
             return True
     except FileNotFoundError:
         pass
