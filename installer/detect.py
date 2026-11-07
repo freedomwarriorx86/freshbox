@@ -4,11 +4,20 @@ import subprocess
 
 
 SUPPORTED = {
-    "apt":   "Ubuntu / Debian",
-    "dnf":   "Fedora / RHEL",
-    "brew":  "macOS",
-    "nix":   "NixOS / nix",
-    "zypper": "openSUSE / SUSE",
+    "apt":        "Ubuntu / Debian",
+    "dnf":        "Fedora / RHEL",
+    "brew":       "macOS",
+    "nix":        "NixOS / nix",
+    "zypper":     "openSUSE / SUSE",
+    "pacman":     "Arch Linux / Manjaro",
+    "apk":        "Alpine Linux",
+    "yum":        "RHEL / CentOS (legacy)",
+    "emerge":     "Gentoo",
+    "xbps":       "Void Linux",
+    "snap":       "Snap (universal)",
+    "flatpak":    "Flatpak (universal)",
+    "winget":     "Windows (winget)",
+    "chocolatey": "Windows (chocolatey)",
 }
 
 
@@ -82,6 +91,105 @@ def is_installed(package_name: str) -> bool:
             capture_output=True, text=True
         )
         if result.returncode == 0 and package_name in result.stdout:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # pacman check
+    try:
+        result = subprocess.run(
+            ["pacman", "-Q", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # apk check
+    try:
+        result = subprocess.run(
+            ["apk", "info", "-e", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # yum check
+    try:
+        result = subprocess.run(
+            ["yum", "list", "installed", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name in result.stdout:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # emerge / gentoo check via portage db
+    try:
+        result = subprocess.run(
+            ["equery", "list", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name in result.stdout:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # xbps check
+    try:
+        result = subprocess.run(
+            ["xbps-query", "-l", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name in result.stdout:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # snap check
+    try:
+        result = subprocess.run(
+            ["snap", "list", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name in result.stdout:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # flatpak check
+    try:
+        result = subprocess.run(
+            ["flatpak", "list", "--application", "--columns=application"],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name in result.stdout:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # winget check
+    try:
+        result = subprocess.run(
+            ["winget", "list", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name.lower() in result.stdout.lower():
+            return True
+    except FileNotFoundError:
+        pass
+
+    # chocolatey check
+    try:
+        result = subprocess.run(
+            ["choco", "list", "--local-only", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name.lower() in result.stdout.lower():
             return True
     except FileNotFoundError:
         pass

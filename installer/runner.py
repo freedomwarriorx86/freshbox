@@ -22,19 +22,37 @@ class Result:
 
 
 INSTALL_COMMANDS = {
-    "apt":   ["sudo", "apt", "install", "-y"],
-    "dnf":   ["sudo", "dnf", "install", "-y"],
-    "brew":  ["brew", "install"],
-    "nix":   ["nix-env", "-iA"],
-    "zypper": ["sudo", "zypper", "install", "-y"],
+    "apt":        ["sudo", "apt", "install", "-y"],
+    "dnf":        ["sudo", "dnf", "install", "-y"],
+    "brew":       ["brew", "install"],
+    "nix":        ["nix-env", "-iA"],
+    "zypper":     ["sudo", "zypper", "install", "-y"],
+    "pacman":     ["sudo", "pacman", "-S", "--noconfirm"],
+    "apk":        ["sudo", "apk", "add"],
+    "yum":        ["sudo", "yum", "install", "-y"],
+    "emerge":     ["sudo", "emerge", "--noreplace"],
+    "xbps":       ["sudo", "xbps-install", "-Sy"],
+    "snap":       ["sudo", "snap", "install"],
+    "flatpak":    ["flatpak", "install", "-y"],
+    "winget":     ["winget", "install"],
+    "chocolatey": ["choco", "install", "-y"],
 }
 
 UPDATE_COMMANDS = {
-    "apt":   ["sudo", "apt", "update"],
-    "dnf":   ["sudo", "dnf", "makecache"],
-    "brew":  ["brew", "update"],
-    "nix":   ["nix-channel", "--update"],
-    "zypper": ["sudo", "zypper", "refresh"],
+    "apt":        ["sudo", "apt", "update"],
+    "dnf":        ["sudo", "dnf", "makecache"],
+    "brew":       ["brew", "update"],
+    "nix":        ["nix-channel", "--update"],
+    "zypper":     ["sudo", "zypper", "refresh"],
+    "pacman":     ["sudo", "pacman", "-Sy"],
+    "apk":        ["sudo", "apk", "update"],
+    "yum":        ["sudo", "yum", "makecache"],
+    "emerge":     ["sudo", "emerge", "--sync"],
+    "xbps":       ["sudo", "xbps-install", "-S"],
+    "snap":       ["snap", "refresh"],
+    "flatpak":    ["flatpak", "update", "-y"],
+    "winget":     ["winget", "upgrade"],
+    "chocolatey": ["choco", "upgrade", "all", "-y"],
 }
 
 

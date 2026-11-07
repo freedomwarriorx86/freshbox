@@ -40,18 +40,23 @@ CONFIG_PATH = Path(__file__).parent / "config" / "packages.toml"
 
 # One accent color per pack so the banner changes with each selection.
 PACK_COLORS = {
-    "stock":       "white",
-    "monitors":    "red",
-    "devtools":    "green",
-    "shell":       "blue",
-    "terminal":    "magenta",
+    "stock":        "white",
+    "monitors":     "red",
+    "devtools":     "green",
+    "shell":        "blue",
+    "terminal":     "magenta",
     "cybersecurity":"bright_red",
-    "webdev":      "bright_blue",
-    "circuitdev":  "bright_magenta",
-    "science":     "bright_cyan",
-    "electronics": "yellow",
-    "privacy":     "bright_magenta",
-    "sysadmin":    "bright_yellow",
+    "webdev":       "bright_blue",
+    "circuitdev":   "bright_magenta",
+    "science":      "bright_cyan",
+    "electronics":  "yellow",
+    "privacy":      "bright_magenta",
+    "sysadmin":     "bright_yellow",
+    "arch":         "bright_blue",
+    "alpine":       "bright_cyan",
+    "gentoo":       "bright_red",
+    "void":         "green",
+    "windows":      "cyan",
 }
 DEFAULT_COLOR = "red"
 
@@ -227,7 +232,7 @@ def main():
     result = detect_package_manager()
     if result is None:
         print_banner()
-        console.print("[bold red]error:[/bold red] unsupported package manager. freshbox supports apt, dnf, brew, nix, and zypper.")
+        console.print("[bold red]error:[/bold red] unsupported package manager. freshbox supports apt, dnf, brew, nix, zypper, pacman, apk, yum, emerge, xbps, snap, flatpak, winget, and chocolatey.")
         raise SystemExit(1)
 
     manager, manager_label = result

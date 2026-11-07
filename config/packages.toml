@@ -190,3 +190,53 @@ packages = [
     { name = "fail2ban",  apt = "fail2ban",  dnf = "fail2ban",  brew = "fail2ban",  nix = "fail2ban",  zypper = "fail2ban" },
     { name = "auditd",    apt = "auditd",    dnf = "auditd",    brew = "auditd",    nix = "auditd",    zypper = "auditd" },
 ]
+
+[categories.arch]
+label = "Arch Linux"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git",             pacman = "git",             apk = "git",             yum = "git",             emerge = "dev-vcs/git",        xbps = "git",             winget = "Git.Git",          chocolatey = "git" },
+    { name = "base-devel",      apt = "build-essential", dnf = "gcc",   brew = "gcc",  nix = "gcc",             zypper = "gcc",             pacman = "base-devel",      apk = "build-base",      yum = "gcc",             emerge = "sys-devel/gcc",      xbps = "base-devel",      winget = "",                 chocolatey = "" },
+    { name = "reflector",       apt = "",                dnf = "",      brew = "",     nix = "",                zypper = "",              pacman = "reflector",     apk = "",                yum = "",                emerge = "",                 xbps = "",                  winget = "",                 chocolatey = "" },
+    { name = "yay",             apt = "",                dnf = "",      brew = "",     nix = "",                zypper = "",              pacman = "",                apk = "",                yum = "",                emerge = "",                 xbps = "",                  winget = "",                 chocolatey = "" },
+    { name = "timeshift",       apt = "timeshift",       dnf = "",      brew = "",     nix = "",                zypper = "",              pacman = "timeshift",     apk = "",                yum = "",                emerge = "",                 xbps = "",                  winget = "",                 chocolatey = "" },
+    { name = "flatpak",         apt = "flatpak",         dnf = "flatpak",brew = "",    nix = "",                zypper = "flatpak",       pacman = "flatpak",       apk = "flatpak",         yum = "flatpak",         emerge = "",                 xbps = "flatpak",           winget = "",                 chocolatey = "" },
+]
+
+[categories.alpine]
+label = "Alpine Linux"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git",             pacman = "git",             apk = "git",             yum = "git",             emerge = "dev-vcs/git",        xbps = "git",             winget = "Git.Git",          chocolatey = "git" },
+    { name = "curl",            apt = "curl",            dnf = "curl",  brew = "curl", nix = "curl",            zypper = "curl",            pacman = "curl",            apk = "curl",            yum = "curl",            emerge = "net-misc/curl",      xbps = "curl",              winget = "curl",               chocolatey = "curl" },
+    { name = "vim",             apt = "vim",             dnf = "vim",   brew = "vim",  nix = "vim",             zypper = "vim",             pacman = "vim",             apk = "vim",             yum = "vim",             emerge = "app-editors/vim",    xbps = "vim",               winget = "Vim.Vim",            chocolatey = "vim" },
+    { name = "openssh",         apt = "openssh-client",  dnf = "openssh-clients", brew = "openssh", nix = "openssh", zypper = "openssh", pacman = "openssh", apk = "openssh", yum = "openssh-clients", emerge = "net-misc/openssh", xbps = "openssh", winget = "", chocolatey = "" },
+    { name = "sudo",            apt = "sudo",            dnf = "sudo",  brew = "",     nix = "",                zypper = "sudo",            pacman = "sudo",            apk = "sudo",            yum = "sudo",            emerge = "app-admin/sudo",     xbps = "sudo",              winget = "",                   chocolatey = "" },
+]
+
+[categories.gentoo]
+label = "Gentoo"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git",             pacman = "git",             apk = "git",             yum = "git",             emerge = "dev-vcs/git",        xbps = "git",             winget = "Git.Git",          chocolatey = "git" },
+    { name = "gcc",             apt = "gcc",             dnf = "gcc",   brew = "gcc",  nix = "gcc",             zypper = "gcc",             pacman = "gcc",             apk = "gcc",             yum = "gcc",             emerge = "sys-devel/gcc",      xbps = "gcc",               winget = "",                   chocolatey = "" },
+    { name = "vim",             apt = "vim",             dnf = "vim",   brew = "vim",  nix = "vim",             zypper = "vim",             pacman = "vim",             apk = "vim",             yum = "vim",             emerge = "app-editors/vim",    xbps = "vim",               winget = "Vim.Vim",            chocolatey = "vim" },
+    { name = "python",          apt = "python3",         dnf = "python3", brew = "python@", nix = "python3", zypper = "python3", pacman = "python", apk = "python3", yum = "python3", emerge = "dev-lang/python", xbps = "python3", winget = "Python.Python.3", chocolatey = "python" },
+]
+
+[categories.void]
+label = "Void Linux"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git",             pacman = "git",             apk = "git",             yum = "git",             emerge = "dev-vcs/git",        xbps = "git",             winget = "Git.Git",          chocolatey = "git" },
+    { name = "vim",             apt = "vim",             dnf = "vim",   brew = "vim",  nix = "vim",             zypper = "vim",             pacman = "vim",             apk = "vim",             yum = "vim",             emerge = "app-editors/vim",    xbps = "vim",               winget = "Vim.Vim",            chocolatey = "vim" },
+    { name = "curl",            apt = "curl",            dnf = "curl",  brew = "curl", nix = "curl",            zypper = "curl",            pacman = "curl",            apk = "curl",            yum = "curl",            emerge = "net-misc/curl",      xbps = "curl",              winget = "curl",               chocolatey = "curl" },
+    { name = "neovim",          apt = "neovim",          dnf = "neovim",brew = "neovim", nix = "neovim", zypper = "neovim", pacman = "neovim", apk = "neovim", yum = "neovim", emerge = "app-editors/neovim", xbps = "neovim", winget = "Neovim.Neovim", chocolatey = "neovim" },
+]
+
+[categories.windows]
+label = "Windows"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git",             pacman = "git",             apk = "git",             yum = "git",             emerge = "dev-vcs/git",        xbps = "git",             winget = "Git.Git",          chocolatey = "git" },
+    { name = "curl",            apt = "curl",            dnf = "curl",  brew = "curl", nix = "curl",            zypper = "curl",            pacman = "curl",            apk = "curl",            yum = "curl",            emerge = "net-misc/curl",      xbps = "curl",              winget = "curl",               chocolatey = "curl" },
+    { name = "vim",             apt = "vim",             dnf = "vim",   brew = "vim",  nix = "vim",             zypper = "vim",             pacman = "vim",             apk = "vim",             yum = "vim",             emerge = "app-editors/vim",    xbps = "vim",               winget = "Vim.Vim",            chocolatey = "vim" },
+    { name = "nodejs",          apt = "nodejs",          dnf = "nodejs",brew = "node", nix = "nodejs", zypper = "nodejs", pacman = "nodejs", apk = "nodejs", yum = "nodejs", emerge = "net-libs/nodejs", xbps = "nodejs", winget = "OpenJS.NodeJS", chocolatey = "nodejs" },
+    { name = "python",          apt = "python3",         dnf = "python3", brew = "python@", nix = "python3", zypper = "python3", pacman = "python", apk = "python3", yum = "python3", emerge = "dev-lang/python", xbps = "python3", winget = "Python.Python.3", chocolatey = "python" },
+    { name = "docker",          apt = "docker.io",       dnf = "docker",brew = "docker",nix = "docker", zypper = "docker", pacman = "docker", apk = "docker", yum = "docker", emerge = "app-containers/docker", xbps = "docker", winget = "Docker.DockerDesktop", chocolatey = "docker-desktop" },
+]

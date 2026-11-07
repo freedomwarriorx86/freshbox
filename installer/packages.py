@@ -12,6 +12,15 @@ class Package:
     brew: str = ""
     nix: str = ""
     zypper: str = ""
+    pacman: str = ""
+    apk: str = ""
+    yum: str = ""
+    emerge: str = ""
+    xbps: str = ""
+    snap: str = ""
+    flatpak: str = ""
+    winget: str = ""
+    chocolatey: str = ""
     apt_ppa: Optional[str] = None
     apt_script: Optional[str] = None
     dnf_script: Optional[str] = None

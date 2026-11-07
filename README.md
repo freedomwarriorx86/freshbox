@@ -13,6 +13,14 @@ because typing `apt install` forty times is not a personality.
 - macOS (brew)
 - NixOS / nix (nix)
 - openSUSE / SUSE (zypper)
+- Arch Linux / Manjaro (pacman)
+- Alpine Linux (apk)
+- RHEL / CentOS legacy (yum)
+- Gentoo (emerge)
+- Void Linux (xbps)
+- Snap (universal)
+- Flatpak (universal)
+- Windows (winget / chocolatey)
 
 ---
 
