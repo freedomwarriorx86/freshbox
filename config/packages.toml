@@ -240,3 +240,32 @@ packages = [
     { name = "python",          apt = "python3",         dnf = "python3", brew = "python@", nix = "python3", zypper = "python3", pacman = "python", apk = "python3", yum = "python3", emerge = "dev-lang/python", xbps = "python3", winget = "Python.Python.3", chocolatey = "python" },
     { name = "docker",          apt = "docker.io",       dnf = "docker",brew = "docker",nix = "docker", zypper = "docker", pacman = "docker", apk = "docker", yum = "docker", emerge = "app-containers/docker", xbps = "docker", winget = "Docker.DockerDesktop", chocolatey = "docker-desktop" },
 ]
+
+[categories.freebsd]
+label = "FreeBSD"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git",             pacman = "git",             apk = "git",             yum = "git",             emerge = "dev-vcs/git",        xbps = "git",             winget = "Git.Git",          chocolatey = "git",          pkg = "git",                 pkgin = "git" },
+    { name = "vim",             apt = "vim",             dnf = "vim",   brew = "vim",  nix = "vim",             zypper = "vim",             pacman = "vim",             apk = "vim",             yum = "vim",             emerge = "app-editors/vim",    xbps = "vim",               winget = "Vim.Vim",            chocolatey = "vim",          pkg = "vim",                 pkgin = "vim" },
+    { name = "curl",            apt = "curl",            dnf = "curl",  brew = "curl", nix = "curl",            zypper = "curl",            pacman = "curl",            apk = "curl",            yum = "curl",            emerge = "net-misc/curl",      xbps = "curl",              winget = "curl",               chocolatey = "curl",         pkg = "curl",                pkgin = "curl" },
+    { name = "neovim",          apt = "neovim",          dnf = "neovim",brew = "neovim", nix = "neovim", zypper = "neovim", pacman = "neovim", apk = "neovim", yum = "neovim", emerge = "app-editors/neovim", xbps = "neovim", winget = "Neovim.Neovim", chocolatey = "neovim", pkg = "neovim", pkgin = "neovim" },
+    { name = "tmux",            apt = "tmux",            dnf = "tmux",  brew = "tmux", nix = "tmux",            zypper = "tmux",            pacman = "tmux",            apk = "tmux",            yum = "tmux",            emerge = "app-misc/tmux",        xbps = "tmux",              winget = "Tmux.Tmux",          chocolatey = "tmux",         pkg = "tmux",                pkgin = "tmux" },
+    { name = "sudo",            apt = "sudo",            dnf = "sudo",  brew = "",     nix = "",                zypper = "sudo",            pacman = "sudo",            apk = "sudo",            yum = "sudo",            emerge = "app-admin/sudo",     xbps = "sudo",              winget = "",                   chocolatey = "",             pkg = "sudo",                pkgin = "sudo" },
+]
+
+[categories.openbsd]
+label = "OpenBSD"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git",             pacman = "git",             apk = "git",             yum = "git",             emerge = "dev-vcs/git",        xbps = "git",             winget = "Git.Git",          chocolatey = "git",          pkg = "git",                 pkgin = "git" },
+    { name = "vim",             apt = "vim",             dnf = "vim",   brew = "vim",  nix = "vim",             zypper = "vim",             pacman = "vim",             apk = "vim",             yum = "vim",             emerge = "app-editors/vim",    xbps = "vim",               winget = "Vim.Vim",            chocolatey = "vim",          pkg = "vim",                 pkgin = "vim" },
+    { name = "tmux",            apt = "tmux",            dnf = "tmux",  brew = "tmux", nix = "tmux",            zypper = "tmux",            pacman = "tmux",            apk = "tmux",            yum = "tmux",            emerge = "app-misc/tmux",        xbps = "tmux",              winget = "Tmux.Tmux",          chocolatey = "tmux",         pkg = "tmux",                pkgin = "tmux" },
+    { name = "sudo",            apt = "sudo",            dnf = "sudo",  brew = "",     nix = "",                zypper = "sudo",            pacman = "sudo",            apk = "sudo",            yum = "sudo",            emerge = "app-admin/sudo",     xbps = "sudo",              winget = "",                   chocolatey = "",             pkg = "sudo",                pkgin = "sudo" },
+]
+
+[categories.netbsd]
+label = "NetBSD"
+packages = [
+    { name = "git",             apt = "git",             dnf = "git",   brew = "git",  nix = "git",             zypper = "git",             pacman = "git",             apk = "git",             yum = "git",             emerge = "dev-vcs/git",        xbps = "git",             winget = "Git.Git",          chocolatey = "git",          pkg = "git",                 pkgin = "git" },
+    { name = "vim",             apt = "vim",             dnf = "vim",   brew = "vim",  nix = "vim",             zypper = "vim",             pacman = "vim",             apk = "vim",             yum = "vim",             emerge = "app-editors/vim",    xbps = "vim",               winget = "Vim.Vim",            chocolatey = "vim",          pkg = "vim",                 pkgin = "vim" },
+    { name = "tmux",            apt = "tmux",            dnf = "tmux",  brew = "tmux", nix = "tmux",            zypper = "tmux",            pacman = "tmux",            apk = "tmux",            yum = "tmux",            emerge = "app-misc/tmux",        xbps = "tmux",              winget = "Tmux.Tmux",          chocolatey = "tmux",         pkg = "tmux",                pkgin = "tmux" },
+    { name = "sudo",            apt = "sudo",            dnf = "sudo",  brew = "",     nix = "",                zypper = "sudo",            pacman = "sudo",            apk = "sudo",            yum = "sudo",            emerge = "app-admin/sudo",     xbps = "sudo",              winget = "",                   chocolatey = "",             pkg = "sudo",                pkgin = "sudo" },
+]

@@ -21,6 +21,8 @@ because typing `apt install` forty times is not a personality.
 - Snap (universal)
 - Flatpak (universal)
 - Windows (winget / chocolatey)
+- FreeBSD / OpenBSD (pkg)
+- NetBSD (pkgin)
 
 ---
 

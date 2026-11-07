@@ -18,6 +18,8 @@ SUPPORTED = {
     "flatpak":    "Flatpak (universal)",
     "winget":     "Windows (winget)",
     "chocolatey": "Windows (chocolatey)",
+    "pkg":        "FreeBSD / OpenBSD (pkgng)",
+    "pkgin":      "NetBSD (pkgin)",
 }
 
 
@@ -190,6 +192,28 @@ def is_installed(package_name: str) -> bool:
             capture_output=True, text=True
         )
         if result.returncode == 0 and package_name.lower() in result.stdout.lower():
+            return True
+    except FileNotFoundError:
+        pass
+
+    # FreeBSD / OpenBSD pkg check
+    try:
+        result = subprocess.run(
+            ["pkg", "info", "-e", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0:
+            return True
+    except FileNotFoundError:
+        pass
+
+    # NetBSD pkgin check
+    try:
+        result = subprocess.run(
+            ["pkgin", "list", package_name],
+            capture_output=True, text=True
+        )
+        if result.returncode == 0 and package_name in result.stdout:
             return True
     except FileNotFoundError:
         pass

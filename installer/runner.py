@@ -36,6 +36,8 @@ INSTALL_COMMANDS = {
     "flatpak":    ["flatpak", "install", "-y"],
     "winget":     ["winget", "install"],
     "chocolatey": ["choco", "install", "-y"],
+    "pkg":        ["pkg", "install", "-y"],
+    "pkgin":      ["pkgin", "-y", "install"],
 }
 
 UPDATE_COMMANDS = {
@@ -53,6 +55,8 @@ UPDATE_COMMANDS = {
     "flatpak":    ["flatpak", "update", "-y"],
     "winget":     ["winget", "upgrade"],
     "chocolatey": ["choco", "upgrade", "all", "-y"],
+    "pkg":        ["pkg", "update"],
+    "pkgin":      ["pkgin", "-y", "update"],
 }
 
 

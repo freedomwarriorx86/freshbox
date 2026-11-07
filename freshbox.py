@@ -57,6 +57,9 @@ PACK_COLORS = {
     "gentoo":       "bright_red",
     "void":         "green",
     "windows":      "cyan",
+    "freebsd":      "bright_green",
+    "openbsd":      "bright_green",
+    "netbsd":       "bright_green",
 }
 DEFAULT_COLOR = "red"
 
@@ -232,7 +235,7 @@ def main():
     result = detect_package_manager()
     if result is None:
         print_banner()
-        console.print("[bold red]error:[/bold red] unsupported package manager. freshbox supports apt, dnf, brew, nix, zypper, pacman, apk, yum, emerge, xbps, snap, flatpak, winget, and chocolatey.")
+        console.print("[bold red]error:[/bold red] unsupported package manager. freshbox supports apt, dnf, brew, nix, zypper, pacman, apk, yum, emerge, xbps, snap, flatpak, winget, chocolatey, pkg, and pkgin.")
         raise SystemExit(1)
 
     manager, manager_label = result

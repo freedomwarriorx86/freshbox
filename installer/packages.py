@@ -21,6 +21,8 @@ class Package:
     flatpak: str = ""
     winget: str = ""
     chocolatey: str = ""
+    pkg: str = ""
+    pkgin: str = ""
     apt_ppa: Optional[str] = None
     apt_script: Optional[str] = None
     dnf_script: Optional[str] = None
